@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name             = 'SCCardView'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of SCCardView.'
+  s.summary          = 'Selector card to change content view'
 
-  s.description      = 'Selector card to change content view'
+  s.description      = 'Selector card to change content view.'
 
   s.homepage         = 'https://github.com/myoungsc/SCCardView'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
