@@ -10,7 +10,7 @@ A view that changes the content by selecting a card. Content can be customized, 
 You can change the card by clicking on it or by swiping up and down gestures.
 
 ## ScreenShot
-![](https://github.com/myoungsc/SCPageControl/blob/master/ScreenShot/SCPageControl.gif)
+![](https://github.com/myoungsc/SCCardView/blob/master/SCCardView.gif?raw=true)
 
 ## Requirements
 ```
