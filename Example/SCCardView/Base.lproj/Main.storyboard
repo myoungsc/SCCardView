@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="SCCardView_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8qC-WQ-9zV" customClass="SCCardView" customModule="SCCardView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g6Z-Bg-vap">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFn-D5-VI4">
+                                        <rect key="frame" x="15" y="40" width="345" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="hdW-3e-Acr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Mt-ti-2KL">
+                                        <rect key="frame" x="10" y="95" width="355" height="400"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="g6Z-Bg-vap" firstAttribute="top" secondItem="8qC-WQ-9zV" secondAttribute="top" id="9rf-2h-AmK"/>
+                                    <constraint firstAttribute="trailing" secondItem="g6Z-Bg-vap" secondAttribute="trailing" id="F9e-hd-kVC"/>
+                                    <constraint firstAttribute="bottom" secondItem="6Mt-ti-2KL" secondAttribute="bottom" constant="172" id="JXc-YN-aT8"/>
+                                    <constraint firstItem="6Mt-ti-2KL" firstAttribute="top" secondItem="ZFn-D5-VI4" secondAttribute="bottom" constant="15" id="UES-oc-UcK"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZFn-D5-VI4" secondAttribute="trailing" constant="15" id="WLn-Cb-C8q"/>
+                                    <constraint firstAttribute="trailing" secondItem="6Mt-ti-2KL" secondAttribute="trailing" constant="10" id="aCF-Rn-zUe"/>
+                                    <constraint firstItem="ZFn-D5-VI4" firstAttribute="top" secondItem="8qC-WQ-9zV" secondAttribute="top" constant="40" id="cgR-ms-eEx"/>
+                                    <constraint firstItem="g6Z-Bg-vap" firstAttribute="leading" secondItem="8qC-WQ-9zV" secondAttribute="leading" id="g89-9w-Ukn"/>
+                                    <constraint firstItem="ZFn-D5-VI4" firstAttribute="leading" secondItem="8qC-WQ-9zV" secondAttribute="leading" constant="15" id="hnP-A6-iFp"/>
+                                    <constraint firstItem="6Mt-ti-2KL" firstAttribute="leading" secondItem="8qC-WQ-9zV" secondAttribute="leading" constant="10" id="qho-dU-erk"/>
+                                    <constraint firstAttribute="bottom" secondItem="g6Z-Bg-vap" secondAttribute="bottom" id="vjy-c5-X7E"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8qC-WQ-9zV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="I1Y-br-JnZ"/>
+                            <constraint firstItem="8qC-WQ-9zV" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="Iip-eC-TMg"/>
+                            <constraint firstAttribute="trailing" secondItem="8qC-WQ-9zV" secondAttribute="trailing" id="Tdw-jf-SuM"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="8qC-WQ-9zV" secondAttribute="bottom" id="ZpS-4C-UBc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contBottomDes" destination="JXc-YN-aT8" id="owU-n3-K0Q"/>
+                        <outlet property="sccard" destination="8qC-WQ-9zV" id="Pe5-nU-deO"/>
+                        <outlet property="sccardSubDes" destination="6Mt-ti-2KL" id="1it-FA-lfF"/>
+                        <outlet property="sccardSubImg" destination="g6Z-Bg-vap" id="kh1-mU-zcl"/>
+                        <outlet property="sccardSubTitle" destination="ZFn-D5-VI4" id="nP0-2a-WPR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-8156" y="-480"/>
+        </scene>
+    </scenes>
+</document>

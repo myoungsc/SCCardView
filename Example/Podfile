@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SCCardView_Example' do
+  pod 'SCCardView', :path => '../'
+
+  target 'SCCardView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
