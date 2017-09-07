@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import SDWebImage
 
 @objc public protocol SCCardviewDelegate: class {
     func SCCardSelectorCard(_ index: Int, dic: [String: Any])
+    func SCCardURLIndexRefresh(_ img: UIImage)
     @objc optional func SCCardDownCardAction(_ indexPath: IndexPath)
     @objc optional func SCCardUpCardAction(_ indexPath: IndexPath)
 }
@@ -33,6 +35,7 @@ public class SCCardView: UIView {
     
     public var bottomInterval: CGFloat = UIScreen.main.bounds.size.height*0.25-10
     public var cardStyle: cardShape = .none
+    public var currentIndex: Int = 0
     
     var rectCorners: UIRectCorner = []
     var dicParameta: [Int: [String: Any]] = [:]
@@ -103,7 +106,6 @@ public class SCCardView: UIView {
         rectCorners = value
     }
     
-    
     func gestureDown(_ recognizer: UISwipeGestureRecognizer) {
         let cell = recognizer.view as! CellCard
         guard let indexPath = cell.indexPath else {
@@ -120,7 +122,6 @@ public class SCCardView: UIView {
         delegate?.SCCardUpCardAction!(indexPath)
     }
     
-
 }
 
 
@@ -165,18 +166,42 @@ extension SCCardView: UICollectionViewDataSource, UICollectionViewDelegate {
         upGesture.direction = .up
         cell.addGestureRecognizer(upGesture)
         
-        
         //initial image
-        if let dic: [String: Any] = dicParameta[indexPath.row] {
+        if var dic: [String: Any] = dicParameta[indexPath.row] {
             if let img: UIImage = dic["image"] as? UIImage {
-                cell.cardImg.image = img
+                
+                // only Use Image
+                guard let strUrl: String = dic["url"] as? String else {
+                    cell.cardImg.image = img
+                    return cell
+                }
+                
+                // use url
+                cell.cardImg.sd_setImage(with: URL(string: strUrl),
+                                         placeholderImage: img,
+                                         options: .cacheMemoryOnly,
+                                         completed: { downImg, err, type, url in
+                                            
+                                            cell.cardImg.image = downImg
+                                            
+                                            dic["image"] = downImg
+                                            self.dicParameta[indexPath.row] = dic
+                                            if indexPath.row == self.currentIndex {
+                                                self.delegate?.SCCardURLIndexRefresh(downImg!)
+                                            }
+                })
+            } else {
+                print("error - \"image\" key value is Required. Please refer to the git README.md.")
             }
-        }        
+        }
+        
         return cell
     }
     
-    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) { //셀 아이템 선택 했을 경우 호출
+    // Click Cell
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let dic: [String: Any] = dicParameta[indexPath.row] {
+            currentIndex = indexPath.row
             delegate?.SCCardSelectorCard(indexPath.row, dic: dic)
         }
     }    
@@ -188,22 +213,4 @@ extension UICollectionViewCell {
         return (superview as? UICollectionView)?.indexPath(for: self)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -26,14 +26,17 @@ class ViewController: UIViewController, SCCardviewDelegate {
         
         // Int index, [String: String] key, Value
         // Make dummy data (Necessary key Image Card UI)
-        let dummyData: [Int: [String: Any]] = [0: ["image": UIImage(named: "sc0")!,
-                                                  "title": "Catholic Church",
-                                                  "description": "Maybe famous Catholic Churchsadl"],
-                                               1: ["image": UIImage(named: "sc1")!,
+        let dummyData: [Int: [String: Any]] = [0: ["image": UIImage(),
+                                                   "url": "https://github.com/myoungsc/SCCardView/blob/master/Example/SCCardView/Images.xcassets/sc0.imageset/sc0.jpg?raw=true",
+                                                   "title": "Catholic Church",
+                                                   "description": "Maybe famous Catholic Churchsadl"],
+                                               1: ["image": UIImage(),
+                                                   "url": "https://github.com/myoungsc/SCCardView/blob/master/Example/SCCardView/Images.xcassets/sc1.imageset/sc1.jpg?raw=true",
                                                    "title": "Beautiful Sea",
                                                    "description": "Beautiful sea anywhere on earth"],
-                                               2: ["image": UIImage(named: "sc2")!,
-                                                  "title": "Famous temple",
+                                               2: ["image": UIImage(),
+                                                   "url": "https://github.com/myoungsc/SCCardView/blob/master/Example/SCCardView/Images.xcassets/sc2.imageset/sc2.jpg?raw=true",
+                                                   "title": "Famous temple",
                                                    "description": "A landscape of famous temple"],
                                                3: ["image": UIImage(named: "sc3")!,
                                                   "title": "Pretty Flower",
@@ -57,7 +60,7 @@ class ViewController: UIViewController, SCCardviewDelegate {
         
         
         // Set initial value
-        if let dicSubData: [String: Any] = dummyData[0] {
+        if let dicSubData: [String: Any] = dummyData[sccard.currentIndex] {
             if let img: UIImage = dicSubData["image"] as? UIImage,
                 let title: String = dicSubData["title"] as? String,
                 let des: String = dicSubData["description"] as? String {                
@@ -76,7 +79,7 @@ class ViewController: UIViewController, SCCardviewDelegate {
     }
 
     //MARK: ## SCCardView Delegate ##
-    // Selector Card Click
+    // Selector Card Click. Required Delegate
     func SCCardSelectorCard(_ index: Int, dic: [String: Any]) {
         if let img: UIImage = dic["image"] as? UIImage,
             let title: String = dic["title"] as? String,
@@ -87,12 +90,17 @@ class ViewController: UIViewController, SCCardviewDelegate {
         }
     }
     
-    // Card Down Gesture
+    // Refresh content view from down image. Required Delegate
+    func SCCardURLIndexRefresh(_ img: UIImage) {
+        sccardSubImg.image = img
+    }
+    
+    // Card Down Gesture. optional Delegate
     internal func SCCardDownCardAction(_ indexPath: IndexPath) {
         print("down gesture \(indexPath)")
     }
     
-    // Card Up Gesture
+    // Card Up Gesture. optional Delegate
     internal func SCCardUpCardAction(_ indexPath: IndexPath) {
         print("up gesture \(indexPath)")
     }

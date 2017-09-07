@@ -13,5 +13,10 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'SCCardView/Classes/**/*'
+
+  s.subspec 'Lite' do |cs|
+    cs.dependency 'SDWebImage'
+
+  end
   
 end
