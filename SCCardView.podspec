@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SCCardView'
-  s.version          = '0.2.0'
+  s.version          = '0.3.0'
   s.summary          = 'Selector card to change content view'
 
   s.description      = 'Selector card to change content view.'
@@ -14,9 +14,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'SCCardView/Classes/**/*'
 
-  s.subspec 'Lite' do |cs|
-    cs.dependency 'SDWebImage'
+  s.dependency 'SDWebImage'
 
-  end
   
 end
