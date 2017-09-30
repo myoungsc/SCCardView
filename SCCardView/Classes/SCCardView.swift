@@ -104,7 +104,7 @@ public class SCCardView: UIView {
     }
     
     
-    func gestureDown(_ recognizer: UISwipeGestureRecognizer) {
+    @objc func gestureDown(_ recognizer: UISwipeGestureRecognizer) {
         let cell = recognizer.view as! CellCard
         guard let indexPath = cell.indexPath else {
             return
@@ -112,7 +112,7 @@ public class SCCardView: UIView {
         delegate?.SCCardDownCardAction!(indexPath)
     }
     
-    func gestureUp(_ recognizer: UISwipeGestureRecognizer) {
+    @objc func gestureUp(_ recognizer: UISwipeGestureRecognizer) {
         let cell = recognizer.view as! CellCard
         guard let indexPath = cell.indexPath else {
             return
