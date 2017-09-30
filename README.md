@@ -32,13 +32,16 @@ pod install
 ```
 
 ## How To Use
+If you use a URL, you can set the key value to "url". But "image" is a required parameter. If you use "url", the value of the "image" key will be entered into the placeholder image if it can be empty. The URL image is rendered dependent on SDWebImage.
+
 ```Swift
 import SCCardView
 
 // Int index, [String: String] key, Value
 // Make dummy data (Necessary key Image Card UI)
-let dummyData: [Int: [String: Any]] = [0: ["image": UIImage(named: "sc0")!,
+let dummyData: [Int: [String: Any]] = [0: ["image": UIImage()!,
                                           "title": "Catholic Church",
+                                          "url": "https://github.com/myoungsc/SCCardView/blob/master/Example/SCCardView/Images.xcassets/sc0.imageset/sc0.jpg?raw=true",
                                           "description": "Maybe famous Catholic Churchsadl"],
                                        1: ["image": UIImage(named: "sc1")!,
                                            "title": "Beautiful Sea",
@@ -77,6 +80,34 @@ if let dicSubData: [String: Any] = dummyData[0] {
 }
 // Autolayout bottom card ratio
 contBottomDes.constant = sccard.bottomInterval
+
+
+// Delegate
+// Selector Card Click. Required Delegate
+func SCCardSelectorCard(_ index: Int, dic: [String: Any]) {
+    if let img: UIImage = dic["image"] as? UIImage,
+        let title: String = dic["title"] as? String,
+        let des: String = dic["description"] as? String {
+        sccardSubImg.image = img
+        sccardSubTitle.text = title
+        sccardSubDes.text = des
+    }
+}
+
+// Refresh content view from down image. Required Delegate
+func SCCardURLIndexRefresh(_ img: UIImage) {
+    sccardSubImg.image = img
+}
+
+// Card Down Gesture. optional Delegate
+internal func SCCardDownCardAction(_ indexPath: IndexPath) {
+    print("down gesture \(indexPath)")
+}
+
+// Card Up Gesture. optional Delegate
+internal func SCCardUpCardAction(_ indexPath: IndexPath) {
+    print("up gesture \(indexPath)")
+}
 ```
 
 ## Author
