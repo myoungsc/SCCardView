@@ -25,7 +25,7 @@ SCCardView is available through [CocoaPods](http://cocoapods.org). To install it
 ```ruby
 //Add Podfile
 pod "SCCardView" //Swift 4.0
-pod "SCCardView", , '~> 0.2.0' //Swift 3.0
+pod "SCCardView", , '~> 0.3.0' //Swift 3.0
 
 //After
 pod install
