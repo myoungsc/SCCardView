@@ -106,12 +106,8 @@ public class SCCardView: UIView {
         rectCorners = value
     }
     
-<<<<<<< HEAD
     
     @objc func gestureDown(_ recognizer: UISwipeGestureRecognizer) {
-=======
-    func gestureDown(_ recognizer: UISwipeGestureRecognizer) {
->>>>>>> 28341ac9d451961cb5c291895a1830ea04c8e8a4
         let cell = recognizer.view as! CellCard
         guard let indexPath = cell.indexPath else {
             return

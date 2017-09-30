@@ -1,5 +1,5 @@
 PODS:
-  - SCCardView (0.3.0):
+  - SCCardView (1.0.0):
     - SDWebImage
   - SDWebImage (4.1.0):
     - SDWebImage/Core (= 4.1.0)
@@ -13,9 +13,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SCCardView: 9e08c342b7f1a771ae3777dc84de71ff73b0b4e0
+  SCCardView: 2b2c66750f88d6dd581f4f7d9f9f5d2c9e9f69ba
   SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
 
 PODFILE CHECKSUM: 6dadad92c7d04002c61206301c5b2184bff27588
 
-COCOAPODS: 1.3.0.beta.1
+COCOAPODS: 1.2.1
