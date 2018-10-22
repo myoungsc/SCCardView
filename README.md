@@ -14,8 +14,8 @@ You can change the card by clicking on it or by swiping up and down gestures.
 
 ## Requirements
 ```
-* Swift 3.0.1
-* XCode 8.3.1
+* Swift 4.2
+* XCode 10.0
 * iOS 9.0 (Min SDK)
 ```
 
@@ -24,7 +24,8 @@ SCCardView is available through [CocoaPods](http://cocoapods.org). To install it
 
 ```ruby
 //Add Podfile
-pod "SCCardView" //Swift 4.0
+pod "SCCardView" //Swift 4.2
+pod "SCCardView", '-> 1.0.0' //Swift 4.0
 pod "SCCardView", '~> 0.2.0' //Swift 3.0
 
 //After

@@ -66,7 +66,7 @@ public class SCCardView: UIView {
         aFlowLayout.scrollDirection = .horizontal
         aFlowLayout.minimumLineSpacing = 10.0
         aFlowLayout.minimumInteritemSpacing = 10.0
-        aFlowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 0, 10)
+        aFlowLayout.sectionInset = UIEdgeInsets.init(top: 10, left: 10, bottom: 0, right: 10)
         
         collectionCard = UICollectionView(frame: CGRect(x: 0,
                                                         y: screenHeight*0.75,

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SCCardView'
-  s.version          = '1.0.0'
+  s.version          = '1.1.0'
   s.summary          = 'Selector card to change content view'
   s.description      = 'Selector card to change content view.'
 
